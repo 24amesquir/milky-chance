@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-32" />
+    <meta
+    name="viewport"
+    content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link
+    rel="apple-touch-icon"
+    href="https://cdn.glitch.com/28317d3e-f139-4c15-ae4b-a13ac84de942%2FmilkyChance.PNG?v=1632077943086"
+    />
+    
+    <link
+    rel="apple-touch-startup-image"
+    href="https://cdn.glitch.com/28317d3e-f139-4c15-ae4b-a13ac84de942%2FmilkeyChane.PNG?v=1632077942952"
+    />
+    <link rel="stylesheet" href="upload.css" />
+  </head>
+  <body onload="onload()">
+    <div id="uploadBorder">
+      <header>
+        <h1 id="Title">Upload music</h1>
+        <span
+        onclick="document.getElementById('uploadBorder').remove()"
+        style="
+            position: absolute;
+            right: 0px;
+            margin: 15px;
+            margin-right: 25px;
+            cursor: pointer;
+            "
+          >X</span
+          >
+        </header>
+        <div id="uploadMusic">
+          <div id="SVG">
+            <object data="arrow.svg" type="image/svg+xml">
+              <img
+              style="
+                z-index: 1;
+                position: relative;
+                top: 50px;
+                display: block;
+                margin: auto;
+                "
+              height="80px"
+              src="https://cdn.glitch.global/28317d3e-f139-4c15-ae4b-a13ac84de942/Asset%202.svg?v=1643687144982"
+              /></object
+              ><object data="cloud.svg" type="image/svg+xml">
+                <img
+                style="
+                display: block;
+                margin: auto;
+                position: relative;
+                top: -55px;
+                "
+              height="80px"
+              src="https://cdn.glitch.global/28317d3e-f139-4c15-ae4b-a13ac84de942/Asset%201.svg?v=1643687157073"
+              />
+            </object>
+          </div>
+          <form
+          id="single"
+          action="/single"
+          method="POST"
+          enctype="multipart/form-data"
+          >
+          <input type="file" name="image" accept=".mp3" onsubmit="onSubmit(this.id)"/>
+          <button
+          type="file"
+          class="files"
+          name="btn_upload"
+          id="MyFileUpload"
+          runat="server"
+          >
+          Upload song
+        </button>
+      </form>
+      <form
+      id="multiple"
+      action="/multiple"
+          method="POST"
+          enctype="multipart/form-data"
+          >
+          <input type="file" name="songs" multiple accept=".mp3" onsubmit="onSubmit(this.id)"/>
+          <button
+          type="file"
+          class="files"
+          name="btn_upload"
+          id="MyFilesUpload"
+          runat="server"
+          >
+          Upload album
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+<script src="upload.js"></script>
