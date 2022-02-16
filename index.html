@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      color: cyan;
+      font-family: Consolas, monaco, monospace;
+      background: linear-gradient(to bottom, black, cyan);
+      background-attachment: fixed
+    }
+
+    a {
+      color: cyan
+    }
+
+    footer {
+      position: relative;
+      top: 90%
+    }
+
+    .light {
+      opacity: 50%
+    }
+
+    @-webkit-keyframes blink {
+      from {
+        opacity: 1
+      }
+
+      to {
+        opacity: 0
+      }
+    }
+
+    blink {
+      -webkit-animation-name: blink;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
+      -webkit-animation-duration: 1s;
+    }
+
+    .CD {
+      width: 300px;
+      height: 300px;
+      position: relative
+    }
+
+    #cd {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -128px 0 0 -128px
+    }
+
+    #title {
+      color: cyan;
+      text-transform: uppercase;
+      font-size: 30px
+    }
+
+    .fancy {
+      border-style: solid;
+      border-color: cyan;
+      max-width: 128px;
+      margin: 10px;
+      padding: 3px
+    }
+  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon"
+    href="https://cdn.glitch.com/28317d3e-f139-4c15-ae4b-a13ac84de942%2FmilkyChance.PNG?v=1632077943086" />
+  <link rel="apple-touch-startup-image"
+    href="https://cdn.glitch.com/28317d3e-f139-4c15-ae4b-a13ac84de942%2FmilkeyChane.PNG?v=1632077942952" />
+  <title>Quincy's spotify</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js" defer></script>
+</head>
+
+<body onload="onload()">
+  <center>
+    <div id="title"></div>
+    <p id="artist"></p>
+    <p id="album"></p>
+    <p id="genre"></p>
+    <div class="CD"> <img id="cd"
+        src="https://cdn.glitch.com/28317d3e-f139-4c15-ae4b-a13ac84de942%2Fcd1.png?v=1632077943511" /> </div>
+    <div class="fancy"> <span onclick="goBack()"><img
+          src="https://cdn.glitch.global/28317d3e-f139-4c15-ae4b-a13ac84de942/New%20Piskel-1.png(3).png?v=1642434783438" /></span>
+      <span><img onclick="playAudio();" style="display: inline"
+          src="https://cdn.glitch.global/28317d3e-f139-4c15-ae4b-a13ac84de942/New%20Piskel-1.png(2).png?v=1642434704437" /></span>
+      <span><img onclick="pauseAudio()" style="display: none"
+          src="https://cdn.glitch.global/28317d3e-f139-4c15-ae4b-a13ac84de942/New%20Piskel-1.png(5).png?v=1642434825722" /></span>
+      <span onclick="skip()"><img
+          src="https://cdn.glitch.global/28317d3e-f139-4c15-ae4b-a13ac84de942/New%20Piskel-1.png(4).png?v=1642434782830" /></span>
+      <span onclick="x.currentTime=0;"><img
+          src="https://cdn.glitch.global/28317d3e-f139-4c15-ae4b-a13ac84de942/New%20Piskel-1.png(1).png?v=1642434646756" /></span>
+    </div><input type="range" min="0" max="100" value="100" id="volume-control" />
+    <script src="script.js"></script>
+  </center>
+</body>
+
+</html>
